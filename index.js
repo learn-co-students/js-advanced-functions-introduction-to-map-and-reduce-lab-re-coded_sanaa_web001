@@ -17,6 +17,17 @@ function mapToSquare(sourceArray) {
 }
 
 
-function reduceToTotal(sourceArray, startingPoint) {
-  return startingPoint == undefined ? sourceArray.reduce(sourceArray) : sourceArray.reduce(sourceArray,startingPoint);
+function reduceToTotal(sourceArray, startingPoint = 0) {
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+  return  startingPoint +  sourceArray.reduce(reducer);
+
+}
+
+function reduceToAllTrue(sourceArray) {
+    return sourceArray.reduce((acc, val) => acc && Boolean(val), true);
+}
+
+function reduceToAnyTrue(sourceArray) {
+    return sourceArray.reduce((acc, val) => acc || Boolean(val));
 }
