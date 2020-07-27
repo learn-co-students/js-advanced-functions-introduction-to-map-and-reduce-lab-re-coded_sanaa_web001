@@ -1,17 +1,22 @@
 // Your code here
 
 function mapToNegativize(sourceArray) {
-   returns sourceArray.map(x => x * -1);
+   return sourceArray.map(x => x * -1);
 }
 
 function mapToNoChange(sourceArray) {
-   returns sourceArray.map(x => x );
+   return sourceArray.map(x => x );
 }
 
 function mapToDouble(sourceArray) {
-   returns sourceArray.map(x => x * 2 );
+   return sourceArray.map(x => x * 2 );
 }
 
 function mapToSquare(sourceArray) {
-   returns sourceArray.map(x => x *  x);
+   return sourceArray.map(x => x *  x);
+}
+
+
+function reduceToTotal(sourceArray, startingPoint) {
+  return startingPoint == undefined ? sourceArray.reduce(sourceArray) : sourceArray.reduce(sourceArray,startingPoint);
 }
